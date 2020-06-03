@@ -19,7 +19,7 @@ app.use('/musics', express.static(path.resolve(__dirname, 'save')));
 
 app.use(express.json());
 
-app.get('/list/search', (req, res) => {
+app.get('/list/:search', (req, res) => {
     const search = req.params.search;
     youtube.search.list({
         part: 'snippet',
