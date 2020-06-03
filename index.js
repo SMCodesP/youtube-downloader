@@ -19,10 +19,11 @@ app.use('/musics', express.static(path.resolve(__dirname, 'save')));
 
 app.use(express.json());
 
-app.get('/list', (req, res) => {
+app.get('/list/search', (req, res) => {
+    const search = req.params.search;
     youtube.search.list({
         part: 'snippet',
-        q: 'smcodes',
+        q: search,
         type: 'video'
     }, (err, data) => {
         if (err) return res.json(err);
