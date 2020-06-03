@@ -1,7 +1,8 @@
 const express = require('express');
 const {google} = require('googleapis');
-const ytdl = require('ytdl-core');
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
+ffmpeg.setFfmpegPath(ffmpegPath);
 const youtubedl = require('youtube-dl');
 const fs = require('fs');
 const path = require('path');
