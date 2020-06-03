@@ -96,6 +96,6 @@ app.get('/download', (req, res) => {
         
     });
     
-    app.listen(3333, () => {
-        console.log('Servidor http rodando na porta 3333');
+    app.listen(process.env.PORT || 3333, () => {
+        console.log(`Servidor http rodando na porta ${process.env.PORT || 3333}`);
     });
